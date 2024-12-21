@@ -9,14 +9,8 @@ services:
       - 5000:80
     depends_on:
       - db
-    env_file:
-      - .env
     restart: unless-stopped
 
   db:
-    image: postgres:latest
-    volumes:
-      - ./db:/var/lib/postgresql/data/
-    env_file:
-      - .env
+    image: mongo:latest
     restart: unless-stopped
